@@ -23,7 +23,7 @@ class TesteODS {
     }
 
     def update(String descricao) {
-        this.withTransaction {
+        withTransaction {
             this.descricao = descricao
         }
     }

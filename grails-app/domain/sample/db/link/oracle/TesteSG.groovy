@@ -20,7 +20,7 @@ class TesteSG {
     }
 
     def update(String descricao) {
-        this.withTransaction {
+        withTransaction {
             TesteODS.findAllByTesteSG(this)*.update(descricao)
             this.descricao = descricao
         }
