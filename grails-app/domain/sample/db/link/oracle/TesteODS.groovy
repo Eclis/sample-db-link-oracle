@@ -27,4 +27,8 @@ class TesteODS {
             this.descricao = descricao
         }
     }
+
+    def updateSemTX(String descricao) {
+        this.descricao = descricao
+    }
 }

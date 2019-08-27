@@ -20,4 +20,25 @@ class TesteService {
         map["updeitou ODS"] = TesteODS.get(id)
         map
     }
+
+    def updateSemDDD(Integer id, String descricao) {
+        def map = [:]
+        TesteSG.get(id).with {
+            it.descricao = descricao
+            TesteODS.findAllByTesteSG(it)*.with {
+                it.descricao = descricao
+            }
+        }
+        map["updeitou SG"] = TesteSG.get(id)
+        map["updeitou ODS"] = TesteODS.get(id)
+        map
+    }
+
+    def updateSemTX(Integer id, String descricao) {
+        def map = [:]
+        TesteSG.get(id).updateSemTX(descricao)
+        map["updeitou SG"] = TesteSG.get(id)
+        map["updeitou ODS"] = TesteODS.get(id)
+        map
+    }
 }

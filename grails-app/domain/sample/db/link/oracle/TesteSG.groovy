@@ -25,4 +25,9 @@ class TesteSG {
             this.descricao = descricao
         }
     }
+
+    def updateSemTX(String descricao) {
+        TesteODS.findAllByTesteSG(this)*.updateSemTX(descricao)
+        this.descricao = descricao
+    }
 }

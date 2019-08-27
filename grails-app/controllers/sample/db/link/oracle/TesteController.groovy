@@ -21,4 +21,12 @@ class TesteController {
     def update (Integer id, String descricao) {
         render testeService.update(id, descricao) as JSON
     }
+
+    def updateSemDDD(Integer id, String descricao) {
+        render testeService.updateSemDDD(id, descricao) as JSON
+    }
+
+    def updateSemTX(Integer id, String descricao) {
+        render testeService.updateSemTX(id, descricao) as JSON
+    }
 }
