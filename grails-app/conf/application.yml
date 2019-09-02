@@ -8,6 +8,8 @@ grails:
             # Whether to translate GORM events into Reactor events
             # Disabled by default for performance reasons
             events: false
+    spring:
+        transactionManagement: true
 server:
     port: 20010
 info:
@@ -105,7 +107,6 @@ environments:
             dbCreate: none
             username: 'sigitm3h'
             password: 'sigitm3h'
-            transactional: true
             url: jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.129.180.227)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=SIGITMD)))
             properties:
                 testOnBorrow: true

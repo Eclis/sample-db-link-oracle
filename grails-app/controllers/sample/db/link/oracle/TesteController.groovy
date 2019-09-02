@@ -13,7 +13,7 @@ class TesteController {
     def list(Integer id) {
         def map = [:]
         map["SG"] = TesteSG.get(id)
-        map["ODS"] = TesteODS.get(id)
+        //map["ODS"] = TesteODS.get(id)
 
         render map as JSON
     }

@@ -2,6 +2,8 @@ package sample.db.link.oracle
 
 import grails.gorm.transactions.Transactional
 
+//import grails.gorm.transactions.Transactional
+//
 @Transactional
 class TesteService {
 
@@ -25,9 +27,9 @@ class TesteService {
         def map = [:]
         TesteSG.get(id).with {
             it.descricao = descricao
-            TesteODS.findAllByTesteSG(it)*.with {
-                it.descricao = descricao
-            }
+//            TesteODS.findAllByTesteSG(it)*.with {
+//                it.descricao = descricao
+//            }
         }
         map["updeitou SG"] = TesteSG.get(id)
         map["updeitou ODS"] = TesteODS.get(id)
@@ -36,9 +38,17 @@ class TesteService {
 
     def updateSemTX(Integer id, String descricao) {
         def map = [:]
-        TesteSG.get(id).updateSemTX(descricao)
-        map["updeitou SG"] = TesteSG.get(id)
-        map["updeitou ODS"] = TesteODS.get(id)
+        def teste = TesteSG.get(id)
+        teste.updateSemTX(descricao)
+        map["updeitou SG"] = teste
         map
+    }
+
+    def douglasUpdate() {
+        TesteSG.get(2).updateSemTX("jovempadawan")
+    }
+
+    def bolsonaroUpdate() {
+        TesteSG.get(2).descricao = "putaqpariu"
     }
 }
