@@ -28,6 +28,7 @@ class TesteSG {
     }
 
     void updateSemTX(String descricao) {
-        setDescricao(descricao)
+//        setDescricao(descricao)
+        this.descricao = descricao
     }
 }
