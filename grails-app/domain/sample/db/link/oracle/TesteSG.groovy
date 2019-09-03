@@ -28,9 +28,6 @@ class TesteSG {
     }
 
     void updateSemTX(String descricao) {
-        //TesteODS.findAllByTesteSG(this)*.updateSemTX(descricao)
-        this.descricao = descricao
-        this.save(flush:true, failOnError:true)
-        //executeUpdate("update TesteSG set descricao = $descricao where id = ${this.id}")
+        setDescricao(descricao)
     }
 }

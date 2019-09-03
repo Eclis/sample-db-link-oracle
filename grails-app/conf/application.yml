@@ -8,9 +8,7 @@ grails:
             # Whether to translate GORM events into Reactor events
             # Disabled by default for performance reasons
             events: false
-    spring:
-        transactionManagement: true
-server:
+server: 
     port: 20010
 info:
     app:

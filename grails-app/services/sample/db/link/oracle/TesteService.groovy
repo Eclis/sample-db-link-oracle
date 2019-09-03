@@ -2,8 +2,6 @@ package sample.db.link.oracle
 
 import grails.gorm.transactions.Transactional
 
-//import grails.gorm.transactions.Transactional
-//
 @Transactional
 class TesteService {
 
@@ -40,15 +38,7 @@ class TesteService {
         def map = [:]
         def teste = TesteSG.get(id)
         teste.updateSemTX(descricao)
-        map["updeitou SG"] = teste
+        map["updeitou SG"] = TesteSG.get(id)
         map
-    }
-
-    def douglasUpdate() {
-        TesteSG.get(2).updateSemTX("jovempadawan")
-    }
-
-    def bolsonaroUpdate() {
-        TesteSG.get(2).descricao = "putaqpariu"
     }
 }
